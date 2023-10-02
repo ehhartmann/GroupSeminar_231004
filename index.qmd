@@ -27,7 +27,7 @@ molstar: embed
 
 # Practice{style="text-align: center;"}
 
-## KIMMDY can break a tripelhelix (and continue simulating for a bit)
+## KIMMDY can break a tripelhelix  <br/> (and continue simulating for a bit)
 
 {{< mol-snapshot ./www/tripelhelix.molx >}}
 
