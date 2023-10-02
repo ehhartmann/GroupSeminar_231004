@@ -1,0 +1,88 @@
+---
+title: "MD and Reactions"
+title-slide-attributes:
+  data-background-image: ./www/Collagen_render_opaque.png
+  data-background-position: center
+  data-background-size: fill
+date: today
+institute: Heidelberg Institute for Theoretical Studies
+author:
+  - name: Eric Hartmann
+keywords: [template, demo]
+bibliography: references.bib  
+citation:
+  type: article
+  citation-key: citationKeyNumber
+  status: draft
+format:
+  hits-revealjs:
+    css: presentation.css
+    footer: ''
+  hits-pdf:
+    keep-tex: true
+molstar: embed
+---
+
+## KIMMDY structure and theory
+
+# Practice{style="text-align: center;"}
+
+## KIMMDY can break a tripelhelix (and continue simulating for a bit)
+
+{{< mol-snapshot ./www/tripelhelix.molx >}}
+
+## System energy is continuous 
+
+`kimmdy-analysis energy <run_dir> -t Potential`
+
+![](www/tripelhelix_potential.png)
+
+## Intramolecular energy is continuous
+
+`kimmdy-analysis energy <run_dir> -t 1 Angle Proper-Dih.`
+
+![](www/tripelhelix_bonded.png)
+
+## Most of the time is spend on MD
+
+`kimmdy-analysis runtime <run_dir>`
+
+![](www/tripelhelix_runtime.png)
+
+## KIMMDY can simulate HATs
+
+{{< mol-traj ./www/ala_protein.pdb ./www/ala_aligned.xtc >}}
+
+## Intramolecular energy behaves almost physically correct
+
+`kimmdy-analysis energy <run_dir> -t Bond Angle Proper-Dih.`
+
+![](www/ala_bonded.png)
+
+## ML models increase reaction task time
+
+`kimmdy-analysis runtime <run_dir>`
+
+![](www/ala_runtime.png)
+
+## System generation is semi-automated
+
+`pepgen A ala/`
+
+{{< mol-url ./www/ala.pdb >}}
+
+## System generation is semi-automated
+
+`kimmdy-remove-hydrogen pep.gro topol.top 14 -p -e`
+
+{{< mol-snapshot ./www/ala_d14_npt.molx >}}
+
+
+## Conclusion
+
+- KIMMDY v2 is mostly done
+- All aspects of the reaction functionality have been revisited
+- Theoretical foundations of KIMMDY are clear
+- Practicality of these simulations remains to be shown
+
+# Thank You!{style="text-align: center;"}
