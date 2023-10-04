@@ -25,6 +25,10 @@ molstar: embed
 
 ## KIMMDY structure and theory
 
+## {background-image="./www/KIMMDY_structure.png" background-size=contain}
+
+## {background-image="./www/KIMMDY_theory.png" background-size=contain}
+
 # Practice{style="text-align: center;"}
 
 ## KIMMDY can break a triplehelix  <br/> (and continue simulating for a bit)
